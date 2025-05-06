@@ -51,7 +51,7 @@ const App = () => {
         <>
            <ViewBox value={cislo + 1} max={100} makeColor = {(p) => "green"} />
            <ViewBox value={cislo + 1} max={200} makeColor = {(p) => "blue"} />
-           <ViewBox value={30} max={300} makeColor={(p) => 'hsl(10, 100%, $(p*50)%)'} />
+           <ViewBox value={30} max={300} makeColor={(p) => `rgb(${p*100*20},0,0)`} />
         </>
     )
 }

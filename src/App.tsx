@@ -46,18 +46,17 @@ import { useState } from 'react';
 
 const App = () => {
 
- const rangeState =  useState(100);
+ const [rangeValue, setRangeValue] =  useState(100);
  const initialValue: number = 50;
     // let cislo: number = 34;
     // cislo -= 1;
-{console.log(rangeState)}
     return(
         <>
         <div>
-            <input type="range" min={0} max={200} value={rangeState[0]} defaultValue={initialValue}></input>
+            <input type="range" min={0} max={200} onChange={(e)=>{setRangeValue}} defaultValue={initialValue}></input>
         </div>
-        {console.log(rangeState[0])}
-           { <ViewBox value={rangeState[0]} max={100} makeColor = {(p) => "green"} />
+        {console.log(rangeValue)}
+           { <ViewBox value={rangeValue} max={100} makeColor = {(p) => "green"} />
             /*
            <ViewBox value={cislo + 1} max={200} makeColor = {(p) => "blue"} />
            <ViewBox value={30} max={300} makeColor={(p) => `rgb(${p*100*20},0,0)`} /> */}

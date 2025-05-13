@@ -1,5 +1,6 @@
 import './App.tsx'
-import ViewBox from './components/PercentView.tsx'
+import ViewBox from './components/PercentView'
+import { useState } from 'react';
 // type Address ={
 //     street: string,
 //     city: string,
@@ -44,14 +45,22 @@ import ViewBox from './components/PercentView.tsx'
 // }
 
 const App = () => {
-    let cislo: number = 34;
-    cislo -= 1;
 
+ const rangeState =  useState(100);
+ const initialValue: number = 50;
+    // let cislo: number = 34;
+    // cislo -= 1;
+{console.log(rangeState)}
     return(
         <>
-           <ViewBox value={cislo + 1} max={100} makeColor = {(p) => "green"} />
+        <div>
+            <input type="range" min={0} max={200} value={rangeState[0]} defaultValue={initialValue}></input>
+        </div>
+        {console.log(rangeState[0])}
+           { <ViewBox value={rangeState[0]} max={100} makeColor = {(p) => "green"} />
+            /*
            <ViewBox value={cislo + 1} max={200} makeColor = {(p) => "blue"} />
-           <ViewBox value={30} max={300} makeColor={(p) => `rgb(${p*100*20},0,0)`} />
+           <ViewBox value={30} max={300} makeColor={(p) => `rgb(${p*100*20},0,0)`} /> */}
         </>
     )
 }

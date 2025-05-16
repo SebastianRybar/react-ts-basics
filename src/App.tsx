@@ -53,7 +53,7 @@ const App = () => {
     return(
         <>
         <div>
-            <input type="range" min={0} max={200} onChange={(e)=>{setRangeValue}} defaultValue={initialValue}></input>
+            <input type="range" min={0} max={200} onChange={(e)=>{setRangeValue(Number(e.target.value))}} defaultValue={initialValue}></input>
         </div>
         {console.log(rangeValue)}
            { <ViewBox value={rangeValue} max={100} makeColor = {(p) => "green"} />
